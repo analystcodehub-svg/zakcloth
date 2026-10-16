@@ -1,0 +1,20 @@
+[build]
+  command = "npm install"
+  functions = "netlify/functions"
+  publish = "public"
+
+[functions]
+  included_files = ["views/**", "data/**", "public/**"]
+
+# API routes routed to serverless function
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/api/api/:splat"
+  status = 200
+  force = true
+
+# All frontend pages and dynamic routes routed to Express
+[[redirects]]
+  from = "/*"
+  to = "/.netlify/functions/api"
+  status = 200

@@ -141,12 +141,36 @@ All dummy products are stored in [`data/products.json`](file:///home/oem/Desktop
 ```json
 {
   "id": 1,
-  "brand": "Roadster",
-  "title": "Men Slim Fit Washed Denim Trucker Jacket",
-  "imageUrl": "/images/products/roadster-jacket.jpg"
+  "brand": "FabIndia",
+  "title": "Women Chanderi Silk Zari Woven Border Saree with Blouse Piece",
+  "imageUrl": "/images/products/fabindia-saree.jpg"
 }
 ```
 You can place local images in `public/images/products/` and reference them as `/images/products/<filename>.jpg`.
+
+---
+
+## 🚀 Deploying on Netlify
+
+This project is pre-configured for one-click deployment on Netlify using Netlify Serverless Functions:
+
+1. **Option A: Deploy via Netlify Dashboard (Recommended)**
+   - Go to [Netlify Dashboard](https://app.netlify.com/).
+   - Click **Add new site** > **Import an existing project**.
+   - Select **GitHub** and authorize access to `analystcodehub-svg/zakcloth`.
+   - Netlify will automatically detect [`netlify.toml`](file:///home/oem/Desktop/gity/netlify.toml) settings:
+     - **Build Command**: `npm install`
+     - **Publish Directory**: `public`
+     - **Functions Directory**: `netlify/functions`
+   - Click **Deploy Site**!
+
+2. **Option B: Deploy via Netlify CLI**
+   ```bash
+   npm install -g netlify-cli
+   netlify login
+   netlify init
+   netlify deploy --prod
+   ```
 
 ---
 
@@ -158,15 +182,15 @@ You can test the backend filter and sort engine via `curl` or browser:
 curl http://localhost:3000/api/products
 
 # Filter by category
-curl "http://localhost:3000/api/products?category=ethnic"
+curl "http://localhost:3000/api/products?category=sarees"
 
 # Search products
-curl "http://localhost:3000/api/products?search=denim"
+curl "http://localhost:3000/api/products?search=silk"
 
 # Sort by price low-to-high
 curl "http://localhost:3000/api/products?sort=price_asc"
 
 # Combined filters (Brand + Price + Discount + Sort)
-curl "http://localhost:3000/api/products?brand=H%26M&minDiscount=40&sort=rating"
+curl "http://localhost:3000/api/products?brand=FabIndia&minDiscount=40&sort=rating"
 ```
 

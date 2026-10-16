@@ -5,19 +5,37 @@ const fs = require('fs');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// Determine base directory safely for both standalone execution and Netlify Functions
+const baseDir = fs.existsSync(path.join(__dirname, 'views'))
+  ? __dirname
+  : (fs.existsSync(path.join(process.cwd(), 'views')) ? process.cwd() : path.join(__dirname, '..', '..'));
+
 // Set up EJS view engine and views directory
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(baseDir, 'views'));
 
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(baseDir, 'public')));
+
+// Strip Netlify function prefix if request was routed via /.netlify/functions/api
+app.use((req, res, next) => {
+  if (req.url.startsWith('/.netlify/functions/api')) {
+    req.url = req.url.replace('/.netlify/functions/api', '') || '/';
+  } else if (req.url.startsWith('/.netlify/functions/server')) {
+    req.url = req.url.replace('/.netlify/functions/server', '') || '/';
+  }
+  next();
+});
 
 // Load in-memory products from data/products.json
 let products = [];
 try {
-  const rawData = fs.readFileSync(path.join(__dirname, 'data', 'products.json'), 'utf8');
+  const productsPath = fs.existsSync(path.join(baseDir, 'data', 'products.json'))
+    ? path.join(baseDir, 'data', 'products.json')
+    : path.join(__dirname, 'data', 'products.json');
+  const rawData = fs.readFileSync(productsPath, 'utf8');
   products = JSON.parse(rawData);
   console.log(`[INFO] Loaded ${products.length} products successfully.`);
 } catch (err) {
@@ -174,12 +192,17 @@ app.get('/api/products/:id', (req, res) => {
   res.json({ success: true, product });
 });
 
-// Start Server
-app.listen(PORT, () => {
-  console.log(`======================================================`);
-  console.log(`🛍️  Style Your Mood Fashion App running at http://localhost:${PORT}`);
-  console.log(`✨  Mode: Mobile-First Responsive Design`);
-  console.log(`🎨  Pure CSS Patterns for Hero Banners & Categories`);
-  console.log(`======================================================`);
-});
+// Export express app for serverless wrappers (Netlify) & test suites
+module.exports = app;
+
+// Start Server locally if executed directly
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`======================================================`);
+    console.log(`🛍️  Style Your Mood Fashion App running at http://localhost:${PORT}`);
+    console.log(`✨  Mode: Mobile-First Responsive Design`);
+    console.log(`🎨  Pure CSS Patterns for Hero Banners & Categories`);
+    console.log(`======================================================`);
+  });
+}
 
