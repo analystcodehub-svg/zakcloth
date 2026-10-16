@@ -1,0 +1,96 @@
+<!-- Mobile Hamburger Slide-In Drawer Navigation Menu (Light Blue Theme) -->
+<div id="mobileMenu" class="fixed inset-0 z-50 pointer-events-none transition-opacity duration-300 opacity-0 md:hidden">
+  <!-- Backdrop -->
+  <div id="mobileMenuBackdrop" class="absolute inset-0 bg-slate-900/60 backdrop-blur-2xs pointer-events-auto" onclick="closeMobileMenu()"></div>
+
+  <!-- Menu Sheet -->
+  <div id="mobileMenuPanel" class="absolute inset-y-0 left-0 w-4/5 max-w-xs bg-white shadow-2xl pointer-events-auto transform -translate-x-full transition-transform duration-300 ease-out flex flex-col">
+    
+    <!-- Top User / Brand Greeting Banner (Pure CSS Pattern - Light Blue) -->
+    <div class="pattern-stripes-diagonal p-5 text-white flex-shrink-0 relative overflow-hidden bg-gradient-to-r from-[#0284c7] to-[#0ea5e9]">
+      <div class="relative z-10">
+        <div class="w-12 h-12 rounded-full bg-white text-[#0284c7] font-black text-sm flex items-center justify-center shadow-md mb-2.5">
+          SYM
+        </div>
+        <h3 class="text-sm font-extrabold uppercase tracking-wider">Welcome to Style Your Mood</h3>
+        <p class="text-[11px] text-sky-100 font-medium">Your Ultimate Fashion Destination</p>
+      </div>
+      <!-- Abstract circle -->
+      <div class="absolute -right-8 -bottom-8 w-28 h-28 rounded-full border-4 border-white/20 pointer-events-none"></div>
+    </div>
+
+    <!-- Navigation Links -->
+    <div class="flex-1 overflow-y-auto py-2 divide-y divide-sky-100 text-xs font-bold text-slate-800">
+      
+      <!-- Primary Fashion Categories (Women Only) -->
+      <div class="py-2">
+        <a href="/?category=kurtas" class="flex items-center justify-between px-5 py-3 hover:bg-sky-50 hover:text-[#0284c7] transition-colors">
+          <span>Kurtas & Suit Sets</span>
+          <span class="text-slate-400">›</span>
+        </a>
+        <a href="/?category=sarees" class="flex items-center justify-between px-5 py-3 hover:bg-sky-50 hover:text-[#0284c7] transition-colors">
+          <span>Sarees & Drapes</span>
+          <span class="text-slate-400">›</span>
+        </a>
+        <a href="/?category=dresses" class="flex items-center justify-between px-5 py-3 hover:bg-sky-50 hover:text-[#0284c7] transition-colors">
+          <span>Western Dresses</span>
+          <span class="text-slate-400">›</span>
+        </a>
+        <a href="/?category=tops" class="flex items-center justify-between px-5 py-3 hover:bg-sky-50 hover:text-[#0284c7] transition-colors">
+          <span>Tops, Shirts & Knits</span>
+          <span class="text-slate-400">›</span>
+        </a>
+        <a href="/?category=ethnic" class="flex items-center justify-between px-5 py-3 hover:bg-sky-50 hover:text-[#0284c7] transition-colors">
+          <span>Festive Lehengas & Ethnic</span>
+          <span class="text-slate-400">›</span>
+        </a>
+        <a href="/?category=co-ords" class="flex items-center justify-between px-5 py-3 hover:bg-sky-50 hover:text-[#0284c7] transition-colors">
+          <span>Trending Co-ords</span>
+          <span class="text-slate-400">›</span>
+        </a>
+        <a href="/?category=footwear" class="flex items-center justify-between px-5 py-3 hover:bg-sky-50 hover:text-[#0284c7] transition-colors">
+          <span>Heels & Footwear</span>
+          <span class="text-slate-400">›</span>
+        </a>
+        <a href="/?category=bags" class="flex items-center justify-between px-5 py-3 hover:bg-sky-50 hover:text-[#0284c7] transition-colors">
+          <span>Handbags & Slings</span>
+          <span class="text-slate-400">›</span>
+        </a>
+        <a href="/studio" class="flex items-center justify-between px-5 py-3 text-[#0284c7] hover:bg-sky-50 transition-colors">
+          <span class="flex items-center gap-1.5">
+            <span>Studio Lookbook</span>
+            <span class="text-[9px] bg-[#0284c7] text-white px-1.5 py-0.2 rounded-full uppercase">NEW</span>
+          </span>
+          <span class="text-[#0284c7]">›</span>
+        </a>
+      </div>
+
+      <!-- Quick Shortcuts -->
+      <div class="py-2">
+        <button type="button" onclick="closeMobileMenu(); openWishlistDrawer();" class="w-full flex items-center justify-between px-5 py-3 hover:bg-sky-50 hover:text-[#0284c7] transition-colors text-left">
+          <span>My Wishlist</span>
+          <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+        </button>
+        <button type="button" onclick="closeMobileMenu(); openCartDrawer();" class="w-full flex items-center justify-between px-5 py-3 hover:bg-sky-50 hover:text-[#0284c7] transition-colors text-left">
+          <span>Shopping Bag</span>
+          <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+        </button>
+      </div>
+
+      <!-- Support & Help -->
+      <div class="py-2 text-[11px] text-slate-600 font-semibold">
+        <a href="#" class="block px-5 py-2.5 hover:text-[#0284c7]">Track Orders</a>
+        <a href="#" class="block px-5 py-2.5 hover:text-[#0284c7]">Customer Help & FAQs</a>
+        <a href="#" class="block px-5 py-2.5 hover:text-[#0284c7]">Returns & Exchanges</a>
+      </div>
+
+    </div>
+
+    <!-- Drawer Footer -->
+    <div class="p-4 bg-sky-50/50 border-t border-sky-100 text-[10px] text-slate-400 font-medium flex items-center justify-between flex-shrink-0">
+      <span>Style Your Mood v1.0</span>
+      <span class="text-sky-600 font-bold">100% SECURE</span>
+    </div>
+
+  </div>
+</div>

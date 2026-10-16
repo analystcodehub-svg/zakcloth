@@ -1,0 +1,141 @@
+<!-- Slide-Over Shopping Bag (Cart Drawer - Light Blue Theme) -->
+<div id="cartDrawer" class="fixed inset-0 z-50 pointer-events-none transition-opacity duration-300 opacity-0">
+  <!-- Backdrop -->
+  <div id="cartBackdrop" class="absolute inset-0 bg-slate-900/60 backdrop-blur-2xs pointer-events-auto" onclick="closeCartDrawer()"></div>
+
+  <!-- Drawer Container -->
+  <div id="cartPanel" class="absolute inset-y-0 right-0 w-full sm:max-w-md bg-white shadow-2xl pointer-events-auto transform translate-x-full transition-transform duration-300 ease-out flex flex-col">
+    
+    <!-- Drawer Header -->
+    <div class="px-4 py-3.5 border-b border-sky-100 flex items-center justify-between bg-white flex-shrink-0">
+      <div class="flex items-center gap-2">
+        <svg class="w-5 h-5 text-[#0284c7]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+        <span class="text-sm font-black uppercase tracking-wider text-slate-900">
+          SHOPPING BAG (<span id="cartCountHeader">0</span>)
+        </span>
+      </div>
+      <button type="button" onclick="closeCartDrawer()" class="text-slate-400 hover:text-slate-700 p-1">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+
+    <!-- Free Delivery Progress Bar -->
+    <div class="bg-sky-50/80 border-b border-sky-100 px-4 py-2 flex items-center justify-between text-[11px] text-slate-800">
+      <span class="flex items-center gap-1.5 font-medium">
+        <span>⚡</span>
+        <span id="deliveryMessage">Free standard delivery applied!</span>
+      </span>
+      <span class="font-extrabold text-[#0284c7]">FREE</span>
+    </div>
+
+    <!-- Scrollable Bag Content -->
+    <div class="flex-1 overflow-y-auto p-4 space-y-4" id="cartContent">
+      
+      <!-- Cart Items Container -->
+      <div id="cartItemsList" class="space-y-3">
+        <!-- Rendered dynamically by JS -->
+      </div>
+
+      <!-- Empty Cart State -->
+      <div id="emptyCartView" class="hidden flex-col items-center justify-center py-12 text-center">
+        <div class="w-20 h-20 rounded-full pattern-polka-dots-blue flex items-center justify-center mb-3">
+          <svg class="w-10 h-10 text-[#0284c7]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+        </div>
+        <h4 class="text-sm font-extrabold text-slate-900">Hey, it feels so light!</h4>
+        <p class="text-xs text-slate-500 mt-1 max-w-xs">There is nothing in your bag. Let's add some trendy items.</p>
+        <button type="button" onclick="closeCartDrawer();" class="mt-4 px-6 py-2 border-2 border-[#0284c7] text-[#0284c7] hover:bg-[#0284c7] hover:text-white text-xs font-bold uppercase rounded-md transition-colors">
+          Explore Fashion
+        </button>
+      </div>
+
+      <!-- Coupon & Offers Section -->
+      <div id="couponSection" class="bg-sky-50/50 rounded-xl p-3.5 border border-sky-100 space-y-2">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-extrabold uppercase tracking-wider text-slate-900 flex items-center gap-1.5">
+            <svg class="w-3.5 h-3.5 text-[#0284c7]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"/></svg>
+            Apply Coupons
+          </span>
+          <span id="couponAppliedBadge" class="hidden text-[10px] font-bold bg-sky-100 text-[#0369a1] px-2 py-0.5 rounded-full">
+            Applied ✓
+          </span>
+        </div>
+
+        <div class="flex gap-2">
+          <input 
+            type="text" 
+            id="couponInput" 
+            placeholder="Enter promo code" 
+            class="flex-1 uppercase text-xs px-3 py-2 bg-white border border-sky-200 rounded-md focus:outline-none focus:ring-1 focus:ring-[#0ea5e9] font-mono font-bold text-slate-900"
+          />
+          <button 
+            type="button" 
+            id="applyCouponBtn" 
+            onclick="applyPromoCoupon()"
+            class="px-3.5 py-2 text-xs font-bold text-[#0284c7] hover:text-white hover:bg-[#0284c7] border border-sky-200 hover:border-transparent rounded-md transition-all active:scale-95"
+          >
+            APPLY
+          </button>
+        </div>
+
+        <div class="flex items-center gap-1.5 text-[10px] text-slate-500">
+          <span>Try:</span>
+          <button type="button" onclick="setPromoAndApply('MOOD300')" class="font-mono font-bold text-[#0284c7] hover:underline">MOOD300</button>
+          <span>or</span>
+          <button type="button" onclick="setPromoAndApply('MOOD100')" class="font-mono font-bold text-[#0284c7] hover:underline">MOOD100</button>
+        </div>
+      </div>
+
+      <!-- Price Breakdown Details (MRP, Discount, Coupon, Total) -->
+      <div id="priceDetailsSection" class="border border-sky-100 rounded-xl p-3.5 space-y-2.5 bg-white shadow-2xs">
+        <h5 class="text-xs font-black uppercase tracking-wider text-slate-900">Price Details</h5>
+        
+        <div class="space-y-1.5 text-xs text-slate-600">
+          <div class="flex justify-between">
+            <span>Total MRP</span>
+            <span id="summaryTotalMRP" class="font-medium text-slate-900">₹0</span>
+          </div>
+
+          <div class="flex justify-between text-emerald-600 font-semibold">
+            <span>Discount on MRP</span>
+            <span id="summaryDiscountMRP">- ₹0</span>
+          </div>
+
+          <div class="flex justify-between text-sky-600 font-semibold" id="couponDiscountRow">
+            <span>Coupon Discount</span>
+            <span id="summaryCouponDiscount">- ₹0</span>
+          </div>
+
+          <div class="flex justify-between">
+            <span>Convenience Fee</span>
+            <div>
+              <span class="line-through text-slate-400 mr-1">₹99</span>
+              <span class="text-emerald-600 font-bold">FREE</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="border-t border-slate-100 pt-2.5 flex justify-between items-baseline">
+          <span class="text-xs sm:text-sm font-extrabold text-slate-900">Total Amount</span>
+          <span id="summaryPayableTotal" class="text-base sm:text-lg font-black text-slate-900">₹0</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Sticky Bottom Checkout CTA -->
+    <div id="cartFooterCTA" class="p-4 border-t border-sky-100 bg-white flex items-center justify-between gap-3 flex-shrink-0 shadow-lg">
+      <div class="flex flex-col">
+        <span class="text-[10px] text-slate-400 uppercase font-bold tracking-wider">Total Payable</span>
+        <span id="cartFooterTotal" class="text-base font-black text-slate-900">₹0</span>
+      </div>
+      <button 
+        type="button" 
+        onclick="proceedToCheckout()" 
+        class="flex-1 max-w-[220px] py-3 bg-gradient-to-r from-[#0284c7] to-[#0ea5e9] hover:from-[#0369a1] hover:to-[#0284c7] text-white text-xs sm:text-sm font-black uppercase tracking-wider rounded-lg shadow-lg shadow-sky-500/25 active:scale-98 transition-all text-center"
+      >
+        PLACE ORDER
+      </button>
+    </div>
+
+  </div>
+</div>

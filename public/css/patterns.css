@@ -1,0 +1,355 @@
+/* ==========================================================================
+   Style Your Mood - Light Blue Theme Color Architecture
+   Pure CSS Geometric Patterns, Gradients & Visual Architecture
+   Strictly Zero External Photography for Banners, Graphics & Categories
+   ========================================================================== */
+
+:root {
+  --theme-blue: #0ea5e9;           /* Sky Blue 500 */
+  --theme-blue-hover: #0284c7;     /* Sky Blue 600 */
+  --theme-blue-deep: #0369a1;      /* Sky Blue 700 */
+  --theme-blue-light: #e0f2fe;     /* Sky 100 */
+  --theme-blue-ice: #f0f9ff;       /* Sky 50 */
+  --theme-blue-accent: #38bdf8;    /* Sky 400 */
+  --theme-cyan: #06b6d4;           /* Cyan 500 */
+  --theme-dark: #0f172a;           /* Slate 900 */
+  --theme-slate: #1e293b;          /* Slate 800 */
+  --theme-text-muted: #64748b;     /* Slate 500 */
+  --theme-text-main: #0f172a;      /* Slate 900 */
+  --theme-border: #e2e8f0;         /* Slate 200 */
+  --theme-green: #059669;          /* Emerald rating green */
+  --theme-yellow: #f59e0b;
+}
+
+/* Base Font & Smooth Scroll */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--theme-text-main);
+  background-color: #f8fafc;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Scrollbars */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ==========================================================================
+   PURE CSS GEOMETRIC PATTERNS (Hero Banners & Category Avatars - Light Blue Theme)
+   ========================================================================== */
+
+/* 1. Polka Dots Pattern (Light Ice Blue & Sky Blue) */
+.pattern-polka-dots-blue {
+  background-color: #f0f9ff;
+  background-image: radial-gradient(#0ea5e9 15%, transparent 16%),
+                    radial-gradient(#38bdf8 15%, transparent 16%);
+  background-size: 24px 24px;
+  background-position: 0 0, 12px 12px;
+}
+
+.pattern-polka-dots-dark {
+  background-color: #0f172a;
+  background-image: radial-gradient(rgba(14, 165, 233, 0.45) 15%, transparent 16%),
+                    radial-gradient(rgba(56, 189, 248, 0.3) 15%, transparent 16%);
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 10px;
+}
+
+/* 2. Diagonal Stripes (Sky Blue & Oceanic) */
+.pattern-stripes-diagonal {
+  background-color: #0284c7;
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.16),
+    rgba(255, 255, 255, 0.16) 14px,
+    transparent 14px,
+    transparent 28px
+  );
+}
+
+.pattern-stripes-dark {
+  background-color: #0f172a;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(14, 165, 233, 0.2),
+    rgba(14, 165, 233, 0.2) 12px,
+    rgba(56, 189, 248, 0.1) 12px,
+    rgba(56, 189, 248, 0.1) 24px
+  );
+}
+
+/* 3. High-Tech Cyber Grid (Deep Navy & Neon Cyan/Sky) */
+.pattern-cyber-grid {
+  background-color: #081226;
+  background-image: 
+    linear-gradient(rgba(56, 189, 248, 0.25) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56, 189, 248, 0.25) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* 4. Concentric Rings / Circles (Light Blue / Cyan) */
+.pattern-concentric-circles {
+  background: radial-gradient(circle, #38bdf8 10%, transparent 11%),
+              radial-gradient(circle, #0ea5e9 20%, transparent 21%),
+              radial-gradient(circle, #0369a1 30%, transparent 31%);
+  background-size: 40px 40px;
+}
+
+/* 5. Geometric Chevron Zigzag (Sky Blue & Aqua) */
+.pattern-zigzag-vibrant {
+  background: 
+    linear-gradient(135deg, #0284c7 25%, transparent 25%) -15px 0,
+    linear-gradient(225deg, #0284c7 25%, transparent 25%) -15px 0,
+    linear-gradient(315deg, #0284c7 25%, transparent 25%),
+    linear-gradient(45deg, #0284c7 25%, transparent 25%);
+  background-size: 30px 30px;
+  background-color: #38bdf8;
+}
+
+/* 6. Mandala / Diamond Geometric Pattern (Sapphire & Ice Blue) */
+.pattern-ethnic-blue {
+  background-color: #0c2d48;
+  background-image: 
+    linear-gradient(45deg, #0284c7 25%, transparent 25%), 
+    linear-gradient(-45deg, #0284c7 25%, transparent 25%), 
+    linear-gradient(135deg, #0284c7 25%, transparent 25%), 
+    linear-gradient(-135deg, #0284c7 25%, transparent 25%);
+  background-size: 28px 28px;
+  background-position: 14px 0, 14px 0, 0 0, 0 0;
+}
+
+/* 7. Memphis Abstract Geometry (GenZ / Streetwear - Cyan & Sky) */
+.pattern-memphis-streetwear {
+  background-color: #0b1329;
+  background-image: 
+    radial-gradient(#38bdf8 15%, transparent 16%),
+    linear-gradient(45deg, rgba(14, 165, 233, 0.3) 25%, transparent 25%, transparent 75%, rgba(14, 165, 233, 0.3) 75%);
+  background-size: 32px 32px;
+}
+
+/* 8. Candy Pastel Dots (Kids - Soft Sky & Pastels) */
+.pattern-kids-confetti {
+  background-color: #f0f9ff;
+  background-image: 
+    radial-gradient(#0ea5e9 18%, transparent 19%),
+    radial-gradient(#38bdf8 18%, transparent 19%),
+    radial-gradient(#10b981 18%, transparent 19%);
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px, 7px 7px;
+}
+
+/* 9. Denim Weave & Twill */
+.pattern-denim-twill {
+  background-color: #0369a1;
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.14),
+    rgba(255, 255, 255, 0.14) 4px,
+    transparent 4px,
+    transparent 8px
+  );
+}
+
+/* ==========================================================================
+   CATEGORY AVATAR STYLES (Light Blue Theme & Pure CSS Patterns)
+   ========================================================================== */
+
+.avatar-all {
+  background: linear-gradient(135deg, #0284c7 0%, #0ea5e9 50%, #38bdf8 100%);
+}
+
+.avatar-men {
+  background-color: #0c4a6e;
+  background-image: repeating-linear-gradient(45deg, #0284c7, #0284c7 6px, #0369a1 6px, #0369a1 12px);
+}
+
+.avatar-women {
+  background-color: #0284c7;
+  background-image: radial-gradient(#e0f2fe 22%, transparent 22%);
+  background-size: 10px 10px;
+}
+
+.avatar-kids {
+  background-color: #0ea5e9;
+  background-image: 
+    radial-gradient(#bae6fd 25%, transparent 25%),
+    radial-gradient(#ffffff 25%, transparent 25%);
+  background-size: 14px 14px;
+  background-position: 0 0, 7px 7px;
+}
+
+.avatar-ethnic {
+  background-color: #075985;
+  background-image: 
+    linear-gradient(45deg, #38bdf8 25%, transparent 25%),
+    linear-gradient(-45deg, #38bdf8 25%, transparent 25%);
+  background-size: 12px 12px;
+}
+
+.avatar-streetwear {
+  background-color: #081226;
+  background-image: 
+    linear-gradient(rgba(56, 189, 248, 0.5) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56, 189, 248, 0.5) 1px, transparent 1px);
+  background-size: 8px 8px;
+}
+
+.avatar-genz {
+  background: linear-gradient(135deg, #0284c7 0%, #06b6d4 50%, #67e8f9 100%);
+}
+
+.avatar-sale {
+  background-color: #0284c7;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    #0ea5e9,
+    #0ea5e9 5px,
+    #38bdf8 5px,
+    #38bdf8 10px
+  );
+  animation: pulseBlueGlow 2.5s infinite alternate;
+}
+
+@keyframes pulseBlueGlow {
+  0% { filter: brightness(1) drop-shadow(0 0 2px rgba(14, 165, 233, 0.4)); }
+  100% { filter: brightness(1.2) drop-shadow(0 0 10px rgba(56, 189, 248, 0.8)); }
+}
+
+/* ==========================================================================
+   HERO BANNER SPECIALTY PATTERNS (Light Blue Oceanic & Sky Architecture)
+   ========================================================================== */
+
+.hero-eors-bg {
+  background: 
+    radial-gradient(circle at 10% 20%, rgba(56, 189, 248, 0.4) 0%, transparent 45%),
+    radial-gradient(circle at 90% 80%, rgba(2, 132, 199, 0.5) 0%, transparent 50%),
+    repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.07) 0px, rgba(255, 255, 255, 0.07) 15px, transparent 15px, transparent 30px),
+    linear-gradient(135deg, #082f49 0%, #0c4a6e 50%, #0284c7 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-streetwear-bg {
+  background:
+    linear-gradient(90deg, rgba(56, 189, 248, 0.2) 1px, transparent 1px),
+    linear-gradient(rgba(56, 189, 248, 0.2) 1px, transparent 1px),
+    radial-gradient(ellipse at 80% 20%, rgba(6, 182, 212, 0.4) 0%, transparent 60%),
+    linear-gradient(135deg, #03172e 0%, #082f49 100%);
+  background-size: 28px 28px, 28px 28px, auto, auto;
+}
+
+.hero-ethnic-bg {
+  background: 
+    radial-gradient(circle at 50% 50%, rgba(186, 230, 253, 0.25) 0%, transparent 65%),
+    repeating-linear-gradient(60deg, rgba(56, 189, 248, 0.15) 0px, rgba(56, 189, 248, 0.15) 10px, transparent 10px, transparent 20px),
+    linear-gradient(135deg, #07263b 0%, #075985 50%, #0369a1 100%);
+}
+
+/* Shimmer animation on CTA & Badges */
+.badge-shimmer {
+  background-size: 200% 100%;
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.45) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  animation: shimmer 3s infinite linear;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* ==========================================================================
+   PRODUCT CARD & UI DETAILS
+   ========================================================================== */
+
+/* 3:4 Aspect Ratio Container */
+.aspect-3-4 {
+  aspect-ratio: 3 / 4;
+}
+
+/* Floating Rating Pill */
+.rating-pill {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(4px);
+  box-shadow: 0 1px 4px rgba(15, 23, 42, 0.12);
+  border-radius: 4px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 2px 6px;
+  color: var(--theme-slate);
+}
+
+.rating-star-icon {
+  color: var(--theme-green);
+  font-size: 0.75rem;
+}
+
+/* Floating Wishlist Heart Button */
+.wishlist-btn {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(4px);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.08);
+}
+.wishlist-btn:hover {
+  transform: scale(1.12);
+  background: #ffffff;
+}
+.wishlist-btn.active svg {
+  fill: #0ea5e9;
+  stroke: #0ea5e9;
+}
+
+/* Product Card Hover Shadow & Transition */
+.product-card {
+  transition: transform 0.22s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.22s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+@media (min-width: 768px) {
+  .product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px -8px rgba(14, 165, 233, 0.18);
+  }
+}
+
+/* Drawer & Bottom Sheet Transitions */
+.slide-up-modal {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+}
+
+/* Active Category Pill Indicator */
+.category-item.active .category-avatar-wrapper {
+  box-shadow: 0 0 0 2.5px #0ea5e9, 0 4px 12px rgba(14, 165, 233, 0.35);
+  transform: scale(1.06);
+}
+
+.category-item.active .category-label {
+  color: #0284c7;
+  font-weight: 700;
+}
+
+/* Studio Lookbook Mood Cards */
+.studio-card-stripes {
+  background: repeating-linear-gradient(45deg, #0284c7, #0284c7 12px, #38bdf8 12px, #38bdf8 24px);
+}
+.studio-card-grid {
+  background-color: #0b1329;
+  background-image: linear-gradient(rgba(56, 189, 248, 0.25) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(56, 189, 248, 0.25) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+.studio-card-dots {
+  background-color: #f0f9ff;
+  background-image: radial-gradient(#0ea5e9 20%, transparent 20%);
+  background-size: 16px 16px;
+}

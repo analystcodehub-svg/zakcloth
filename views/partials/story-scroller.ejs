@@ -1,0 +1,168 @@
+<!-- Story-Style Horizontal Category Scroller (Women's Fashion Only - Pure CSS Patterns & Gradients) -->
+<section class="bg-white border-b border-sky-100 py-3 shadow-xs">
+  <div class="max-w-7xl mx-auto px-2 sm:px-4">
+    <div class="flex items-center space-x-4 md:space-x-8 overflow-x-auto no-scrollbar scroll-smooth py-1 px-2" id="storyScroller">
+      
+      <!-- 1. ALL -->
+      <button 
+        type="button" 
+        data-category="all" 
+        class="category-item flex flex-col items-center flex-shrink-0 group focus:outline-none <%= (typeof activeCategory === 'undefined' || activeCategory === 'all') ? 'active' : '' %>"
+      >
+        <div class="category-avatar-wrapper w-14 h-14 md:w-16 md:h-16 rounded-full p-0.5 border-2 border-transparent group-hover:border-[#0284c7] transition-all duration-200">
+          <div class="w-full h-full rounded-full avatar-all flex items-center justify-center shadow-sm">
+            <span class="text-white text-xs font-black tracking-wider">ALL</span>
+          </div>
+        </div>
+        <span class="category-label text-[11px] md:text-xs font-semibold text-slate-700 mt-1.5 transition-colors">
+          All Styles
+        </span>
+      </button>
+
+      <!-- 2. KURTAS -->
+      <button 
+        type="button" 
+        data-category="kurtas" 
+        class="category-item flex flex-col items-center flex-shrink-0 group focus:outline-none <%= (typeof activeCategory !== 'undefined' && activeCategory.toLowerCase() === 'kurtas') ? 'active' : '' %>"
+      >
+        <div class="category-avatar-wrapper w-14 h-14 md:w-16 md:h-16 rounded-full p-0.5 border-2 border-transparent group-hover:border-[#0284c7] transition-all duration-200">
+          <div class="w-full h-full rounded-full pattern-ethnic-blue flex items-center justify-center shadow-sm border border-sky-400/40">
+            <span class="text-white text-[10px] md:text-xs font-extrabold uppercase tracking-tight bg-sky-950/70 px-1 rounded">KURTAS</span>
+          </div>
+        </div>
+        <span class="category-label text-[11px] md:text-xs font-semibold text-slate-700 mt-1.5 transition-colors">
+          Kurtas & Sets
+        </span>
+      </button>
+
+      <!-- 3. SAREES -->
+      <button 
+        type="button" 
+        data-category="sarees" 
+        class="category-item flex flex-col items-center flex-shrink-0 group focus:outline-none <%= (typeof activeCategory !== 'undefined' && activeCategory.toLowerCase() === 'sarees') ? 'active' : '' %>"
+      >
+        <div class="category-avatar-wrapper w-14 h-14 md:w-16 md:h-16 rounded-full p-0.5 border-2 border-transparent group-hover:border-[#0284c7] transition-all duration-200">
+          <div class="w-full h-full rounded-full pattern-stripes-diagonal flex items-center justify-center shadow-sm border border-sky-300/40">
+            <span class="text-white text-[10px] md:text-xs font-extrabold uppercase tracking-tight bg-sky-900/70 px-1 rounded">SAREES</span>
+          </div>
+        </div>
+        <span class="category-label text-[11px] md:text-xs font-semibold text-slate-700 mt-1.5 transition-colors">
+          Sarees
+        </span>
+      </button>
+
+      <!-- 4. DRESSES -->
+      <button 
+        type="button" 
+        data-category="dresses" 
+        class="category-item flex flex-col items-center flex-shrink-0 group focus:outline-none <%= (typeof activeCategory !== 'undefined' && activeCategory.toLowerCase() === 'dresses') ? 'active' : '' %>"
+      >
+        <div class="category-avatar-wrapper w-14 h-14 md:w-16 md:h-16 rounded-full p-0.5 border-2 border-transparent group-hover:border-[#0284c7] transition-all duration-200">
+          <div class="w-full h-full rounded-full pattern-polka-dots-blue flex items-center justify-center shadow-sm border border-sky-400/50">
+            <span class="text-white text-[10px] md:text-xs font-extrabold uppercase tracking-tight bg-sky-950/80 px-1 rounded">DRESSES</span>
+          </div>
+        </div>
+        <span class="category-label text-[11px] md:text-xs font-semibold text-slate-700 mt-1.5 transition-colors">
+          Dresses
+        </span>
+      </button>
+
+      <!-- 5. TOPS & SHIRTS -->
+      <button 
+        type="button" 
+        data-category="tops" 
+        class="category-item flex flex-col items-center flex-shrink-0 group focus:outline-none <%= (typeof activeCategory !== 'undefined' && activeCategory.toLowerCase() === 'tops') ? 'active' : '' %>"
+      >
+        <div class="category-avatar-wrapper w-14 h-14 md:w-16 md:h-16 rounded-full p-0.5 border-2 border-transparent group-hover:border-[#0284c7] transition-all duration-200">
+          <div class="w-full h-full rounded-full pattern-denim-twill flex items-center justify-center shadow-sm border border-cyan-400/50">
+            <span class="text-cyan-300 text-[10px] md:text-xs font-black uppercase tracking-wider bg-black/80 px-1 rounded">TOPS</span>
+          </div>
+        </div>
+        <span class="category-label text-[11px] md:text-xs font-semibold text-slate-700 mt-1.5 transition-colors">
+          Tops & Shirts
+        </span>
+      </button>
+
+      <!-- 6. CO-ORDS -->
+      <button 
+        type="button" 
+        data-category="co-ords" 
+        class="category-item flex flex-col items-center flex-shrink-0 group focus:outline-none <%= (typeof activeCategory !== 'undefined' && activeCategory.toLowerCase() === 'co-ords') ? 'active' : '' %>"
+      >
+        <div class="category-avatar-wrapper w-14 h-14 md:w-16 md:h-16 rounded-full p-0.5 border-2 border-transparent group-hover:border-[#0284c7] transition-all duration-200">
+          <div class="w-full h-full rounded-full pattern-cyber-grid flex items-center justify-center shadow-sm border border-sky-300/50">
+            <span class="text-white text-[9px] md:text-[11px] font-extrabold uppercase tracking-tight bg-sky-900/70 px-1 rounded">CO-ORDS</span>
+          </div>
+        </div>
+        <span class="category-label text-[11px] md:text-xs font-semibold text-slate-700 mt-1.5 transition-colors">
+          Co-ord Sets
+        </span>
+      </button>
+
+      <!-- 7. ETHNIC & LEHENGAS -->
+      <button 
+        type="button" 
+        data-category="ethnic" 
+        class="category-item flex flex-col items-center flex-shrink-0 group focus:outline-none"
+      >
+        <div class="category-avatar-wrapper w-14 h-14 md:w-16 md:h-16 rounded-full p-0.5 border-2 border-transparent group-hover:border-[#0284c7] transition-all duration-200">
+          <div class="w-full h-full rounded-full pattern-ethnic-blue flex items-center justify-center shadow-sm">
+            <span class="text-sky-200 text-[9px] md:text-[11px] font-black tracking-tight bg-slate-950/80 px-1 rounded">LEHENGA</span>
+          </div>
+        </div>
+        <span class="category-label text-[11px] md:text-xs font-semibold text-slate-700 mt-1.5 transition-colors">
+          Lehengas
+        </span>
+      </button>
+
+      <!-- 8. FOOTWEAR -->
+      <button 
+        type="button" 
+        data-category="footwear" 
+        class="category-item flex flex-col items-center flex-shrink-0 group focus:outline-none"
+      >
+        <div class="category-avatar-wrapper w-14 h-14 md:w-16 md:h-16 rounded-full p-0.5 border-2 border-transparent group-hover:border-[#0284c7] transition-all duration-200">
+          <div class="w-full h-full rounded-full pattern-zigzag-vibrant flex items-center justify-center shadow-sm">
+            <span class="text-white text-[9px] md:text-[11px] font-black uppercase tracking-tight bg-slate-900/75 px-1 rounded">HEELS</span>
+          </div>
+        </div>
+        <span class="category-label text-[11px] md:text-xs font-semibold text-slate-700 mt-1.5 transition-colors">
+          Footwear
+        </span>
+      </button>
+
+      <!-- 9. BAGS -->
+      <button 
+        type="button" 
+        data-category="bags" 
+        class="category-item flex flex-col items-center flex-shrink-0 group focus:outline-none"
+      >
+        <div class="category-avatar-wrapper w-14 h-14 md:w-16 md:h-16 rounded-full p-0.5 border-2 border-transparent group-hover:border-[#0284c7] transition-all duration-200">
+          <div class="w-full h-full rounded-full pattern-polka-dots-dark flex items-center justify-center shadow-sm">
+            <span class="text-white text-[9px] md:text-[11px] font-black uppercase tracking-tight bg-slate-900/75 px-1 rounded">BAGS</span>
+          </div>
+        </div>
+        <span class="category-label text-[11px] md:text-xs font-semibold text-slate-700 mt-1.5 transition-colors">
+          Handbags
+        </span>
+      </button>
+
+      <!-- 10. SALE (PULSING) -->
+      <button 
+        type="button" 
+        data-category="sale" 
+        class="category-item flex flex-col items-center flex-shrink-0 group focus:outline-none"
+      >
+        <div class="category-avatar-wrapper w-14 h-14 md:w-16 md:h-16 rounded-full p-0.5 border-2 border-transparent group-hover:border-[#0284c7] transition-all duration-200">
+          <div class="w-full h-full rounded-full avatar-sale flex items-center justify-center shadow-sm">
+            <span class="text-white text-[10px] md:text-xs font-black tracking-widest">DEALS</span>
+          </div>
+        </div>
+        <span class="category-label text-[11px] md:text-xs font-extrabold text-[#0284c7] mt-1.5 transition-colors flex items-center gap-0.5">
+          ⚡ Offers
+        </span>
+      </button>
+
+    </div>
+  </div>
+</section>

@@ -1,0 +1,246 @@
+<!-- Shop by Category Section (Women's Fashion Only - Pure CSS Geometric Patterns & Light Blue Gradients) -->
+<section class="mb-8 md:mb-12" id="shopByCategorySection">
+  <!-- Section Title -->
+  <div class="flex items-center justify-between pb-3 mb-4 border-b border-sky-100">
+    <div>
+      <div class="flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-[#0284c7] animate-pulse"></span>
+        <h2 class="text-sm sm:text-lg font-black uppercase tracking-wider text-slate-900">
+          SHOP BY CATEGORY
+        </h2>
+      </div>
+      <p class="text-[11px] sm:text-xs text-slate-500 font-medium mt-0.5">
+        Explore curated ladies fashion collections & trending picks
+      </p>
+    </div>
+    <span class="text-[11px] sm:text-xs font-bold text-[#0284c7] uppercase tracking-wider hidden sm:block">
+      Women's Exclusive ✦
+    </span>
+  </div>
+
+  <!-- Category Cards Grid: 2 columns on mobile, 4 columns on tablet/desktop -->
+  <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 lg:gap-5">
+
+    <!-- 1. Kurtas & Suits -->
+    <div 
+      onclick="selectShopCategory('kurtas')"
+      class="group relative rounded-xl overflow-hidden border border-sky-100 shadow-2xs hover:shadow-md hover:border-sky-300 transition-all duration-300 cursor-pointer bg-white flex flex-col justify-between"
+    >
+      <div class="h-28 sm:h-32 w-full pattern-ethnic-blue relative overflow-hidden flex items-center justify-center">
+        <!-- Floating Motif Decor -->
+        <div class="absolute -right-4 -bottom-4 w-16 h-16 rounded-full border-2 border-sky-300/30 group-hover:scale-125 transition-transform duration-500"></div>
+        <div class="w-14 h-14 rounded-full bg-white/90 backdrop-blur-xs flex items-center justify-center shadow-md group-hover:rotate-12 transition-transform">
+          <svg class="w-7 h-7 text-[#0284c7]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 2l3 6-3 3-3-3 3-6zm0 9v11m-6-8l6 3 6-3" />
+          </svg>
+        </div>
+        <div class="absolute top-2 left-2">
+          <span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-full bg-white/90 text-[#0284c7] shadow-xs">
+            FROM ₹699
+          </span>
+        </div>
+      </div>
+      <div class="p-3 text-center bg-white group-hover:bg-sky-50/50 transition-colors">
+        <h3 class="text-xs sm:text-sm font-black text-slate-900 uppercase tracking-tight group-hover:text-[#0284c7] transition-colors">
+          Kurtas & Suits
+        </h3>
+        <p class="text-[11px] text-slate-500 font-medium truncate mt-0.5">
+          Anarkalis, Straight & Flared
+        </p>
+      </div>
+    </div>
+
+    <!-- 2. Sarees & Drapes -->
+    <div 
+      onclick="selectShopCategory('sarees')"
+      class="group relative rounded-xl overflow-hidden border border-sky-100 shadow-2xs hover:shadow-md hover:border-sky-300 transition-all duration-300 cursor-pointer bg-white flex flex-col justify-between"
+    >
+      <div class="h-28 sm:h-32 w-full pattern-stripes-diagonal relative overflow-hidden flex items-center justify-center">
+        <div class="absolute -left-4 -top-4 w-16 h-16 rounded-full border-2 border-white/20 group-hover:scale-125 transition-transform duration-500"></div>
+        <div class="w-14 h-14 rounded-full bg-white/90 backdrop-blur-xs flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
+          <svg class="w-7 h-7 text-[#0284c7]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+          </svg>
+        </div>
+        <div class="absolute top-2 left-2">
+          <span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-full bg-white/90 text-[#0284c7] shadow-xs">
+            FLAT 50-70% OFF
+          </span>
+        </div>
+      </div>
+      <div class="p-3 text-center bg-white group-hover:bg-sky-50/50 transition-colors">
+        <h3 class="text-xs sm:text-sm font-black text-slate-900 uppercase tracking-tight group-hover:text-[#0284c7] transition-colors">
+          Sarees & Drapes
+        </h3>
+        <p class="text-[11px] text-slate-500 font-medium truncate mt-0.5">
+          Silk, Georgette & Organza
+        </p>
+      </div>
+    </div>
+
+    <!-- 3. Western Dresses -->
+    <div 
+      onclick="selectShopCategory('dresses')"
+      class="group relative rounded-xl overflow-hidden border border-sky-100 shadow-2xs hover:shadow-md hover:border-sky-300 transition-all duration-300 cursor-pointer bg-white flex flex-col justify-between"
+    >
+      <div class="h-28 sm:h-32 w-full pattern-polka-dots-blue relative overflow-hidden flex items-center justify-center">
+        <div class="absolute -right-4 -top-4 w-16 h-16 rounded-full border-2 border-sky-400/30 group-hover:scale-125 transition-transform duration-500"></div>
+        <div class="w-14 h-14 rounded-full bg-white/90 backdrop-blur-xs flex items-center justify-center shadow-md group-hover:rotate-6 transition-transform">
+          <svg class="w-7 h-7 text-[#0284c7]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M14.121 15.536c-1.171 1.952-3.07 1.952-4.242 0L6 9l3-4h6l3 4-3.879 6.536z" />
+          </svg>
+        </div>
+        <div class="absolute top-2 left-2">
+          <span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-full bg-[#0284c7] text-white shadow-xs">
+            UNDER ₹1,499
+          </span>
+        </div>
+      </div>
+      <div class="p-3 text-center bg-white group-hover:bg-sky-50/50 transition-colors">
+        <h3 class="text-xs sm:text-sm font-black text-slate-900 uppercase tracking-tight group-hover:text-[#0284c7] transition-colors">
+          Western Dresses
+        </h3>
+        <p class="text-[11px] text-slate-500 font-medium truncate mt-0.5">
+          Maxi, Bodycon & Party Fits
+        </p>
+      </div>
+    </div>
+
+    <!-- 4. Tops, Shirts & Tees -->
+    <div 
+      onclick="selectShopCategory('tops')"
+      class="group relative rounded-xl overflow-hidden border border-sky-100 shadow-2xs hover:shadow-md hover:border-sky-300 transition-all duration-300 cursor-pointer bg-white flex flex-col justify-between"
+    >
+      <div class="h-28 sm:h-32 w-full pattern-denim-twill relative overflow-hidden flex items-center justify-center">
+        <div class="w-14 h-14 rounded-full bg-white/90 backdrop-blur-xs flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
+          <svg class="w-7 h-7 text-[#0284c7]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
+          </svg>
+        </div>
+        <div class="absolute top-2 left-2">
+          <span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-full bg-white/90 text-[#0284c7] shadow-xs">
+            MIN. 50% OFF
+          </span>
+        </div>
+      </div>
+      <div class="p-3 text-center bg-white group-hover:bg-sky-50/50 transition-colors">
+        <h3 class="text-xs sm:text-sm font-black text-slate-900 uppercase tracking-tight group-hover:text-[#0284c7] transition-colors">
+          Tops & Shirts
+        </h3>
+        <p class="text-[11px] text-slate-500 font-medium truncate mt-0.5">
+          Peplum, Shirts & Knits
+        </p>
+      </div>
+    </div>
+
+    <!-- 5. Co-ord Sets -->
+    <div 
+      onclick="selectShopCategory('co-ords')"
+      class="group relative rounded-xl overflow-hidden border border-sky-100 shadow-2xs hover:shadow-md hover:border-sky-300 transition-all duration-300 cursor-pointer bg-white flex flex-col justify-between"
+    >
+      <div class="h-28 sm:h-32 w-full pattern-cyber-grid relative overflow-hidden flex items-center justify-center">
+        <div class="w-14 h-14 rounded-full bg-white/90 backdrop-blur-xs flex items-center justify-center shadow-md group-hover:rotate-12 transition-transform">
+          <svg class="w-7 h-7 text-[#0284c7]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+          </svg>
+        </div>
+        <div class="absolute top-2 left-2">
+          <span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-full bg-cyan-400 text-slate-950 shadow-xs">
+            NEW DROPS
+          </span>
+        </div>
+      </div>
+      <div class="p-3 text-center bg-white group-hover:bg-sky-50/50 transition-colors">
+        <h3 class="text-xs sm:text-sm font-black text-slate-900 uppercase tracking-tight group-hover:text-[#0284c7] transition-colors">
+          Co-ord Sets
+        </h3>
+        <p class="text-[11px] text-slate-500 font-medium truncate mt-0.5">
+          Trending Matched Duos
+        </p>
+      </div>
+    </div>
+
+    <!-- 6. Festive Lehengas & Ethnic -->
+    <div 
+      onclick="selectShopCategory('ethnic')"
+      class="group relative rounded-xl overflow-hidden border border-sky-100 shadow-2xs hover:shadow-md hover:border-sky-300 transition-all duration-300 cursor-pointer bg-white flex flex-col justify-between"
+    >
+      <div class="h-28 sm:h-32 w-full pattern-ethnic-blue relative overflow-hidden flex items-center justify-center">
+        <div class="w-14 h-14 rounded-full bg-white/90 backdrop-blur-xs flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
+          <svg class="w-7 h-7 text-[#0284c7]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+          </svg>
+        </div>
+        <div class="absolute top-2 left-2">
+          <span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-full bg-white/90 text-[#0284c7] shadow-xs">
+            UP TO 60% OFF
+          </span>
+        </div>
+      </div>
+      <div class="p-3 text-center bg-white group-hover:bg-sky-50/50 transition-colors">
+        <h3 class="text-xs sm:text-sm font-black text-slate-900 uppercase tracking-tight group-hover:text-[#0284c7] transition-colors">
+          Festive Lehengas
+        </h3>
+        <p class="text-[11px] text-slate-500 font-medium truncate mt-0.5">
+          Weddings & Celebrations
+        </p>
+      </div>
+    </div>
+
+    <!-- 7. Heels & Footwear -->
+    <div 
+      onclick="selectShopCategory('footwear')"
+      class="group relative rounded-xl overflow-hidden border border-sky-100 shadow-2xs hover:shadow-md hover:border-sky-300 transition-all duration-300 cursor-pointer bg-white flex flex-col justify-between"
+    >
+      <div class="h-28 sm:h-32 w-full pattern-zigzag-vibrant relative overflow-hidden flex items-center justify-center">
+        <div class="w-14 h-14 rounded-full bg-white/90 backdrop-blur-xs flex items-center justify-center shadow-md group-hover:rotate-6 transition-transform">
+          <svg class="w-7 h-7 text-[#0284c7]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
+        </div>
+        <div class="absolute top-2 left-2">
+          <span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-full bg-white/90 text-[#0284c7] shadow-xs">
+            FROM ₹999
+          </span>
+        </div>
+      </div>
+      <div class="p-3 text-center bg-white group-hover:bg-sky-50/50 transition-colors">
+        <h3 class="text-xs sm:text-sm font-black text-slate-900 uppercase tracking-tight group-hover:text-[#0284c7] transition-colors">
+          Heels & Footwear
+        </h3>
+        <p class="text-[11px] text-slate-500 font-medium truncate mt-0.5">
+          Block Heels, Flats & Pumps
+        </p>
+      </div>
+    </div>
+
+    <!-- 8. Handbags & Clutches -->
+    <div 
+      onclick="selectShopCategory('bags')"
+      class="group relative rounded-xl overflow-hidden border border-sky-100 shadow-2xs hover:shadow-md hover:border-sky-300 transition-all duration-300 cursor-pointer bg-white flex flex-col justify-between"
+    >
+      <div class="h-28 sm:h-32 w-full pattern-polka-dots-dark relative overflow-hidden flex items-center justify-center">
+        <div class="w-14 h-14 rounded-full bg-white/90 backdrop-blur-xs flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
+          <svg class="w-7 h-7 text-[#0284c7]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+          </svg>
+        </div>
+        <div class="absolute top-2 left-2">
+          <span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-full bg-white/90 text-[#0284c7] shadow-xs">
+            FLAT 60% OFF
+          </span>
+        </div>
+      </div>
+      <div class="p-3 text-center bg-white group-hover:bg-sky-50/50 transition-colors">
+        <h3 class="text-xs sm:text-sm font-black text-slate-900 uppercase tracking-tight group-hover:text-[#0284c7] transition-colors">
+          Handbags & Clutches
+        </h3>
+        <p class="text-[11px] text-slate-500 font-medium truncate mt-0.5">
+          Totes, Slings & Satchels
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+

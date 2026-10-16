@@ -1,0 +1,85 @@
+<!-- Mobile Fixed Bottom Action Bar (SORT & FILTER) & Mobile Bottom Navigation Bar (Light Blue Theme) -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-white border-t border-sky-100 shadow-2xl">
+  
+  <!-- 1. Mobile Bottom Action Bar (Sort & Filter) - Only on Catalog / Search Pages -->
+  <div id="mobileSortFilterBar" class="grid grid-cols-2 border-b border-sky-100 bg-white">
+    <!-- SORT Button -->
+    <button 
+      type="button" 
+      onclick="openSortModal()" 
+      class="py-2.5 flex items-center justify-center gap-2 text-xs font-black uppercase tracking-wider text-slate-800 hover:bg-sky-50 active:bg-sky-100 border-r border-sky-100 transition-colors"
+    >
+      <svg class="w-4 h-4 text-sky-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4h13M3 8h9m-9 4h6m4 0l4-4m0 0l4 4m-4-4v12"/></svg>
+      <span>SORT</span>
+    </button>
+
+    <!-- FILTER Button -->
+    <button 
+      type="button" 
+      onclick="openFilterModal()" 
+      class="py-2.5 flex items-center justify-center gap-2 text-xs font-black uppercase tracking-wider text-slate-800 hover:bg-sky-50 active:bg-sky-100 transition-colors relative"
+    >
+      <svg class="w-4 h-4 text-sky-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/></svg>
+      <span>FILTER</span>
+      <span id="activeFilterBadge" class="hidden w-2 h-2 rounded-full bg-[#0284c7]"></span>
+    </button>
+  </div>
+
+  <!-- 2. Fixed App-Like Mobile Bottom Navigation Bar (Home, Categories, Studio, Wishlist, Profile/Bag) -->
+  <nav class="flex items-center justify-around py-1.5 px-1 bg-white">
+    
+    <!-- Home -->
+    <a href="/" class="flex flex-col items-center p-1 text-[#0284c7] group">
+      <svg class="w-5 h-5 mb-0.5" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+      </svg>
+      <span class="text-[10px] font-bold tracking-tight">Home</span>
+    </a>
+
+    <!-- Categories -->
+    <button type="button" onclick="openFilterModal()" class="flex flex-col items-center p-1 text-slate-600 hover:text-[#0284c7] group">
+      <svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/>
+      </svg>
+      <span class="text-[10px] font-semibold tracking-tight">Categories</span>
+    </button>
+
+    <!-- Studio (CSS Pattern Lookbook) -->
+    <a href="/studio" class="flex flex-col items-center p-1 text-slate-600 hover:text-[#0284c7] group relative">
+      <div class="relative">
+        <svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+        </svg>
+        <span class="absolute -top-1 -right-2 w-2 h-2 rounded-full bg-[#0284c7]"></span>
+      </div>
+      <span class="text-[10px] font-semibold tracking-tight">Studio</span>
+    </a>
+
+    <!-- Wishlist -->
+    <button type="button" onclick="openWishlistDrawer()" class="flex flex-col items-center p-1 text-slate-600 hover:text-[#0284c7] group relative">
+      <div class="relative">
+        <svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+        </svg>
+        <span id="mobileWishlistNavBadge" class="absolute -top-1 -right-2 bg-[#0284c7] text-white text-[9px] font-bold w-3.5 h-3.5 rounded-full flex items-center justify-center transform scale-0 transition-transform">
+          0
+        </span>
+      </div>
+      <span class="text-[10px] font-semibold tracking-tight">Wishlist</span>
+    </button>
+
+    <!-- Bag / Cart -->
+    <button type="button" onclick="openCartDrawer()" class="flex flex-col items-center p-1 text-slate-600 hover:text-[#0284c7] group relative">
+      <div class="relative">
+        <svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+        </svg>
+        <span id="mobileCartNavBadge" class="absolute -top-1 -right-2 bg-[#0284c7] text-white text-[9px] font-bold w-3.5 h-3.5 rounded-full flex items-center justify-center transform scale-0 transition-transform">
+          0
+        </span>
+      </div>
+      <span class="text-[10px] font-semibold tracking-tight">Bag</span>
+    </button>
+
+  </nav>
+</div>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Style Your Mood Studio | Pure CSS Pattern Lookbook & Trend Forecast</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            theme: {
+              blue: '#0ea5e9',
+              deep: '#0284c7',
+              accent: '#38bdf8',
+              cyan: '#06b6d4',
+              ice: '#f0f9ff',
+              light: '#e0f2fe',
+              dark: '#0f172a',
+              slate: '#1e293b'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="/css/patterns.css">
+  <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230284c7'/><text y='70' x='15' font-size='55' font-weight='bold' fill='white'>SYM</text></svg>">
+</head>
+<body class="bg-[#f8fafc] text-slate-900 antialiased pb-24 md:pb-12 min-h-screen flex flex-col justify-between">
+
+  <div class="w-full flex-1">
+    <%- include('partials/header') %>
+
+    <!-- Studio Header Banner (Light Blue & Oceanic Theme) -->
+    <section class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 mt-4">
+      <div class="relative rounded-2xl overflow-hidden p-6 sm:p-10 text-white hero-eors-bg shadow-lg border border-sky-400/30">
+        <div class="relative z-10 max-w-xl">
+          <div class="inline-flex items-center gap-1.5 bg-white/20 backdrop-blur-md px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider mb-2 border border-white/20">
+            <span>✨</span>
+            <span>STYLE YOUR MOOD STUDIO • TREND EDIT</span>
+          </div>
+          <h1 class="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight leading-tight">
+            COLOR & GEOMETRY <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-200 via-cyan-300 to-white">LOOKBOOK</span>
+          </h1>
+          <p class="text-xs sm:text-sm text-sky-100 font-medium mt-2">
+            Curated trend forecasts and seasonal color palettes designed purely with CSS patterns, gradients, and light-blue modern styling.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lookbook Grid (Colors & Geometric Patterns Only) -->
+    <section class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 mt-6 sm:mt-10">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+        
+        <!-- Look 1: Cyber Streetwear -->
+        <div class="bg-white rounded-2xl border border-sky-100 overflow-hidden shadow-xs hover:shadow-md transition-shadow flex flex-col">
+          <div class="h-48 pattern-cyber-grid relative p-4 flex flex-col justify-between">
+            <span class="self-start text-[10px] font-black uppercase tracking-wider bg-cyan-400 text-slate-950 px-2 py-0.5 rounded shadow-xs">
+              Trend 01
+            </span>
+            <div>
+              <span class="text-xs font-mono text-cyan-300">CYBER METROPOLIS</span>
+              <h3 class="text-xl font-black text-white">NEON UTILITY & CARGOS</h3>
+            </div>
+          </div>
+          <div class="p-4 flex-1 flex flex-col justify-between">
+            <p class="text-xs text-slate-600 mb-3">
+              Heavy gauge cottons, tactical deep pockets, and dark neon accents rule the street this season.
+            </p>
+            <a href="/?category=streetwear" class="text-xs font-bold text-[#0284c7] hover:underline flex items-center gap-1">
+              <span>Explore Streetwear</span>
+              <span>→</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Look 2: Royal Heritage Ethnic -->
+        <div class="bg-white rounded-2xl border border-sky-100 overflow-hidden shadow-xs hover:shadow-md transition-shadow flex flex-col">
+          <div class="h-48 pattern-ethnic-blue relative p-4 flex flex-col justify-between">
+            <span class="self-start text-[10px] font-black uppercase tracking-wider bg-sky-400 text-slate-950 px-2 py-0.5 rounded shadow-xs">
+              Trend 02
+            </span>
+            <div>
+              <span class="text-xs font-serif text-sky-200">GRAND UTSAV</span>
+              <h3 class="text-xl font-black text-sky-50">JACQUARD & ZARI WEAVE</h3>
+            </div>
+          </div>
+          <div class="p-4 flex-1 flex flex-col justify-between">
+            <p class="text-xs text-slate-600 mb-3">
+              Rich tones of royal sapphire and ice-blue mandala motifs inspired by handcrafted Chanderi weaves.
+            </p>
+            <a href="/?category=ethnic" class="text-xs font-bold text-[#0284c7] hover:underline flex items-center gap-1">
+              <span>Shop Ethnic Styles</span>
+              <span>→</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Look 3: Vibrant Sky Pop -->
+        <div class="bg-white rounded-2xl border border-sky-100 overflow-hidden shadow-xs hover:shadow-md transition-shadow flex flex-col">
+          <div class="h-48 pattern-polka-dots-blue relative p-4 flex flex-col justify-between border-b border-sky-100">
+            <span class="self-start text-[10px] font-black uppercase tracking-wider bg-[#0284c7] text-white px-2 py-0.5 rounded shadow-xs">
+              Trend 03
+            </span>
+            <div>
+              <span class="text-xs font-bold text-[#0284c7]">ICE CANDY</span>
+              <h3 class="text-xl font-black text-slate-900">POLKA DOTS & AZURE</h3>
+            </div>
+          </div>
+          <div class="p-4 flex-1 flex flex-col justify-between">
+            <p class="text-xs text-slate-600 mb-3">
+              Playful retro silhouettes, sweetheart necklines, and vibrant azure shades for everyday glam.
+            </p>
+            <a href="/?category=tops" class="text-xs font-bold text-[#0284c7] hover:underline flex items-center gap-1">
+              <span>Discover Tops & Peplums</span>
+              <span>→</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Look 4: Chic Co-ord Duos -->
+        <div class="bg-white rounded-2xl border border-sky-100 overflow-hidden shadow-xs hover:shadow-md transition-shadow flex flex-col">
+          <div class="h-48 pattern-cyber-grid relative p-4 flex flex-col justify-between">
+            <span class="self-start text-[10px] font-black uppercase tracking-wider bg-cyan-400 text-slate-950 px-2 py-0.5 rounded shadow-xs">
+              Trend 04
+            </span>
+            <div>
+              <span class="text-xs font-mono text-cyan-300">MODERN CO-ORDS</span>
+              <h3 class="text-xl font-black text-white">MATCHED SHIRT & TROUSERS</h3>
+            </div>
+          </div>
+          <div class="p-4 flex-1 flex flex-col justify-between">
+            <p class="text-xs text-slate-600 mb-3">
+              Effortless two-piece co-ordinated silhouettes in breathable modal rayon and tailored fits.
+            </p>
+            <a href="/?category=co-ords" class="text-xs font-bold text-[#0284c7] hover:underline flex items-center gap-1">
+              <span>View Co-ord Sets</span>
+              <span>→</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Look 5: Western Evening Glam -->
+        <div class="bg-white rounded-2xl border border-sky-100 overflow-hidden shadow-xs hover:shadow-md transition-shadow flex flex-col">
+          <div class="h-48 pattern-stripes-diagonal relative p-4 flex flex-col justify-between">
+            <span class="self-start text-[10px] font-black uppercase tracking-wider bg-sky-500 text-white px-2 py-0.5 rounded shadow-xs">
+              Trend 05
+            </span>
+            <div>
+              <span class="text-xs font-bold text-sky-100">EVENING SOIREE</span>
+              <h3 class="text-xl font-black text-white">SATIN WRAPS & TIERED MAXIS</h3>
+            </div>
+          </div>
+          <div class="p-4 flex-1 flex flex-col justify-between">
+            <p class="text-xs text-slate-600 mb-3">
+              Lustrous fluid satin wrap dresses and flowy chiffon tiered maxis for special dinner celebrations.
+            </p>
+            <a href="/?category=dresses" class="text-xs font-bold text-[#0284c7] hover:underline flex items-center gap-1">
+              <span>Shop Western Dresses</span>
+              <span>→</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Look 6: Statement Heels & Luxury Totes -->
+        <div class="bg-white rounded-2xl border border-sky-100 overflow-hidden shadow-xs hover:shadow-md transition-shadow flex flex-col">
+          <div class="h-48 pattern-zigzag-vibrant relative p-4 flex flex-col justify-between">
+            <span class="self-start text-[10px] font-black uppercase tracking-wider bg-slate-900 text-white px-2 py-0.5 rounded shadow-xs">
+              Trend 06
+            </span>
+            <div>
+              <span class="text-xs font-bold text-sky-100">ACCESSORY EDIT</span>
+              <h3 class="text-xl font-black text-white">BLOCK HEELS & QUILTED BAGS</h3>
+            </div>
+          </div>
+          <div class="p-4 flex-1 flex flex-col justify-between">
+            <p class="text-xs text-slate-600 mb-3">
+              Memory foam block heels, crystal pointed pumps, and gold-chain structured totes to finish the look.
+            </p>
+            <a href="/?category=footwear" class="text-xs font-bold text-[#0284c7] hover:underline flex items-center gap-1">
+              <span>Explore Footwear & Bags</span>
+              <span>→</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+  </div>
+
+  <!-- Drawers & Modals -->
+  <%- include('partials/sort-bottom-sheet') %>
+  <%- include('partials/filter-bottom-sheet') %>
+  <%- include('partials/size-modal') %>
+  <%- include('partials/cart-drawer') %>
+  <%- include('partials/wishlist-drawer') %>
+  <%- include('partials/mobile-menu') %>
+  <%- include('partials/mobile-bottom-bar') %>
+
+  <script src="/js/app.js"></script>
+</body>
+</html>

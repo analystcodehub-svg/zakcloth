@@ -1,0 +1,66 @@
+<!-- Size Selector Modal (Interactive Add-to-Bag Size Selector Popup - Light Blue Theme) -->
+<div id="sizeModal" class="fixed inset-0 z-50 pointer-events-none transition-opacity duration-300 opacity-0">
+  <!-- Backdrop -->
+  <div id="sizeBackdrop" class="absolute inset-0 bg-slate-900/60 backdrop-blur-2xs pointer-events-auto" onclick="closeSizeModal()"></div>
+
+  <!-- Modal Sheet -->
+  <div id="sizeSheet" class="absolute bottom-0 inset-x-0 sm:inset-x-auto sm:left-1/2 sm:top-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2 sm:bottom-auto w-full sm:max-w-md bg-white rounded-t-2xl sm:rounded-2xl shadow-2xl pointer-events-auto transform translate-y-full sm:translate-y-0 transition-transform duration-300 ease-out flex flex-col p-4 sm:p-6">
+    
+    <!-- Header with Close Button -->
+    <div class="flex items-start justify-between pb-3 border-b border-sky-100">
+      <div class="flex items-center gap-3">
+        <!-- Thumbnail -->
+        <div class="w-14 h-18 bg-sky-50 rounded overflow-hidden aspect-3-4 flex-shrink-0 border border-sky-100">
+          <img id="sizeModalImg" src="" alt="Product" class="w-full h-full object-cover">
+        </div>
+        <div>
+          <h4 id="sizeModalBrand" class="text-xs sm:text-sm font-extrabold text-slate-900 uppercase"></h4>
+          <p id="sizeModalTitle" class="text-xs text-slate-500 truncate max-w-[200px] sm:max-w-[240px]"></p>
+          <div class="flex items-baseline gap-1.5 mt-1">
+            <span id="sizeModalPrice" class="text-sm font-black text-slate-900"></span>
+            <span id="sizeModalOriginalPrice" class="text-xs text-slate-400 line-through"></span>
+            <span id="sizeModalDiscount" class="text-xs font-bold text-[#0284c7]"></span>
+          </div>
+        </div>
+      </div>
+
+      <button type="button" onclick="closeSizeModal()" class="text-slate-400 hover:text-slate-700 p-1">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+
+    <!-- Size Selection Area -->
+    <div class="py-4">
+      <div class="flex items-center justify-between mb-2.5">
+        <span class="text-xs font-extrabold uppercase tracking-wider text-slate-900">SELECT SIZE</span>
+        <button type="button" class="text-[11px] font-bold text-[#0284c7] hover:underline" onclick="showSizeChartToast()">Size Chart</button>
+      </div>
+
+      <!-- Size Pills -->
+      <div id="sizeOptionsList" class="flex flex-wrap gap-2.5">
+        <!-- Rendered dynamically by JS -->
+      </div>
+      <p id="sizeErrorMsg" class="hidden text-xs text-rose-500 font-semibold mt-2">Please select a size to continue</p>
+    </div>
+
+    <!-- Service Promise Perks -->
+    <div class="bg-sky-50/60 rounded-lg p-2.5 mb-4 text-[11px] text-slate-600 flex items-center justify-around border border-sky-100">
+      <span class="flex items-center gap-1 font-medium text-sky-900">⚡ 2-Day Delivery</span>
+      <span class="text-sky-300">•</span>
+      <span class="flex items-center gap-1 font-medium text-sky-900">↺ 14 Days Return</span>
+      <span class="text-sky-300">•</span>
+      <span class="flex items-center gap-1 font-medium text-sky-900">✔ 100% Original</span>
+    </div>
+
+    <!-- Add To Bag CTA Button -->
+    <button 
+      type="button" 
+      id="confirmAddBagBtn"
+      class="w-full py-3 bg-gradient-to-r from-[#0284c7] to-[#0ea5e9] hover:from-[#0369a1] hover:to-[#0284c7] text-white text-xs sm:text-sm font-black uppercase tracking-wider rounded-lg shadow-lg shadow-sky-500/25 active:scale-98 transition-all flex items-center justify-center gap-2"
+    >
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+      <span>DONE • ADD TO BAG</span>
+    </button>
+
+  </div>
+</div>

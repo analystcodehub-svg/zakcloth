@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Online Shopping for Women's Fashion & Lifestyle | Style Your Mood</title>
+  
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            theme: {
+              blue: '#0ea5e9',
+              deep: '#0284c7',
+              accent: '#38bdf8',
+              cyan: '#06b6d4',
+              ice: '#f0f9ff',
+              light: '#e0f2fe',
+              dark: '#0f172a',
+              slate: '#1e293b'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Pure CSS Geometric Patterns & Style Your Mood Visuals (Light Blue Theme) -->
+  <link rel="stylesheet" href="/css/patterns.css">
+  <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230284c7'/><text y='70' x='15' font-size='55' font-weight='bold' fill='white'>SYM</text></svg>">
+</head>
+<body class="bg-[#f8fafc] text-slate-900 antialiased pb-24 md:pb-12 min-h-screen flex flex-col justify-between">
+
+  <!-- Main App Wrapper -->
+  <div class="w-full flex-1">
+    
+    <!-- 1. Sticky Top Navigation -->
+    <%- include('partials/header') %>
+
+    <!-- 2. Story-Style Horizontal Category Scroller (Pure CSS Patterns) -->
+    <%- include('partials/story-scroller') %>
+
+    <!-- 3. Patterned Hero Carousel / Banner (Pure CSS Gradients & Patterns) -->
+    <%- include('partials/hero-banner') %>
+
+    <!-- 4. Pure CSS Promotional Bank Offer Strip -->
+    <%- include('partials/promo-strip') %>
+
+    <!-- 5. Main Product Catalog Section -->
+    <main class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 mt-5 md:mt-8">
+      
+      <!-- Dedicated Shop by Category Section (Ladies Only) -->
+      <%- include('partials/shop-by-category') %>
+
+      <!-- Catalog Header Bar: Category Title, Counts, and Desktop Sort Dropdown -->
+      <div id="productsCatalog" class="flex items-center justify-between pb-3 mb-3 border-b border-sky-100 flex-wrap gap-2 scroll-mt-20">
+        <div class="flex items-baseline gap-2">
+          <h1 class="text-sm sm:text-lg font-black uppercase tracking-wider text-slate-900" id="catalogTitle">
+            TRENDING FASHION
+          </h1>
+          <span class="text-xs text-slate-500 font-medium" id="productsCountDisplay">
+            <%= products.length %> items
+          </span>
+        </div>
+
+        <!-- Desktop Action Controls: Filter & Sort -->
+        <div class="hidden md:flex items-center gap-3">
+          <button 
+            type="button" 
+            onclick="openFilterModal()" 
+            class="flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold text-slate-700 bg-white hover:bg-sky-50 border border-sky-200 rounded-md shadow-2xs transition-all hover:border-sky-300"
+          >
+            <svg class="w-4 h-4 text-[#0284c7]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/></svg>
+            <span>All Filters</span>
+          </button>
+
+          <div class="flex items-center gap-2 border border-sky-200 bg-white rounded-md px-3 py-1.5 shadow-2xs">
+            <span class="text-xs text-slate-400 font-medium">Sort by:</span>
+            <select 
+              id="desktopSortSelect" 
+              class="text-xs font-bold text-slate-800 bg-transparent focus:outline-none cursor-pointer"
+              onchange="onSortChange(this.value)"
+            >
+              <option value="popularity" <%= activeSort === 'popularity' ? 'selected' : '' %>>Recommended</option>
+              <option value="price_asc" <%= activeSort === 'price_asc' ? 'selected' : '' %>>Price: Low to High</option>
+              <option value="price_desc" <%= activeSort === 'price_desc' ? 'selected' : '' %>>Price: High to Low</option>
+              <option value="rating" <%= activeSort === 'rating' ? 'selected' : '' %>>Customer Rating</option>
+              <option value="discount" <%= activeSort === 'discount' ? 'selected' : '' %>>Better Discount</option>
+              <option value="newest" <%= activeSort === 'newest' ? 'selected' : '' %>>What's New</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2-Column Mobile Product Grid (4-Column on Desktop) -->
+      <div 
+        id="productsGrid" 
+        class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2.5 sm:gap-4 lg:gap-5"
+      >
+        <% if (products && products.length > 0) { %>
+          <% products.forEach(product => { %>
+            <%- include('partials/product-card', { product }) %>
+          <% }) %>
+        <% } %>
+      </div>
+
+      <!-- No Products Fallback State -->
+      <div id="noProductsView" class="<%= products.length === 0 ? '' : 'hidden' %> text-center py-16 bg-white rounded-2xl border border-sky-100 p-6 mt-4 shadow-xs">
+        <div class="w-16 h-16 rounded-full pattern-polka-dots-blue mx-auto flex items-center justify-center mb-3">
+          <svg class="w-8 h-8 text-[#0284c7]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <h3 class="text-sm sm:text-base font-extrabold text-slate-900">We couldn't find any matches!</h3>
+        <p class="text-xs text-slate-500 mt-1 max-w-sm mx-auto">Please check the spelling or try resetting your category & filter preferences.</p>
+        <button 
+          type="button" 
+          onclick="clearAllFilters()" 
+          class="mt-4 px-5 py-2 bg-gradient-to-r from-[#0284c7] to-[#0ea5e9] text-white text-xs font-bold uppercase rounded-md shadow-md shadow-sky-500/25 active:scale-95 transition-all"
+        >
+          Reset All Filters
+        </button>
+      </div>
+
+    </main>
+
+    <!-- Trust Markers & Guarantees Section (Pure CSS Badges) -->
+    <section class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 mt-10 md:mt-14">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 py-6 border-y border-sky-100">
+        
+        <div class="flex items-center gap-3 p-2">
+          <div class="w-10 h-10 rounded-full pattern-stripes-diagonal flex items-center justify-center text-white font-bold flex-shrink-0">
+            ★
+          </div>
+          <div>
+            <h6 class="text-xs font-black uppercase text-slate-900">100% ORIGINAL</h6>
+            <p class="text-[11px] text-slate-500">guarantee for all products</p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3 p-2">
+          <div class="w-10 h-10 rounded-full bg-emerald-600 flex items-center justify-center text-white font-bold flex-shrink-0">
+            ↺
+          </div>
+          <div>
+            <h6 class="text-xs font-black uppercase text-slate-900">RETURN WITHIN 14DAYS</h6>
+            <p class="text-[11px] text-slate-500">of receiving your order</p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3 p-2">
+          <div class="w-10 h-10 rounded-full bg-sky-600 flex items-center justify-center text-white font-bold flex-shrink-0">
+            ⚡
+          </div>
+          <div>
+            <h6 class="text-xs font-black uppercase text-slate-900">FAST EXPRESS DELIVERY</h6>
+            <p class="text-[11px] text-slate-500">shipped across 25,000+ pin codes</p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3 p-2">
+          <div class="w-10 h-10 rounded-full bg-cyan-600 flex items-center justify-center text-white font-bold flex-shrink-0">
+            🛡
+          </div>
+          <div>
+            <h6 class="text-xs font-black uppercase text-slate-900">SECURE PAYMENTS</h6>
+            <p class="text-[11px] text-slate-500">UPI, Net Banking & Cards</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Desktop Footer -->
+  <footer class="hidden md:block bg-sky-50/50 border-t border-sky-100 py-8 text-xs text-slate-500 mt-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+      <div class="flex items-center gap-2">
+        <div class="w-6 h-6 rounded bg-[#0284c7] text-white flex items-center justify-center font-black text-[10px]">SYM</div>
+        <span class="font-extrabold text-slate-800">STYLE YOUR MOOD</span>
+        <span class="text-slate-400">© 2026 www.styleyourmood.com. All rights reserved.</span>
+      </div>
+      <div class="flex space-x-6 text-slate-600 font-semibold text-[11px] flex-wrap">
+        <a href="/?category=kurtas" class="hover:text-[#0284c7]">KURTAS</a>
+        <a href="/?category=sarees" class="hover:text-[#0284c7]">SAREES</a>
+        <a href="/?category=dresses" class="hover:text-[#0284c7]">DRESSES</a>
+        <a href="/?category=tops" class="hover:text-[#0284c7]">TOPS</a>
+        <a href="/?category=ethnic" class="hover:text-[#0284c7]">ETHNIC</a>
+        <a href="/?category=footwear" class="hover:text-[#0284c7]">FOOTWEAR</a>
+        <a href="/studio" class="hover:text-[#0284c7]">STUDIO</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================
+       MODALS, SHEETS & DRAWERS (Slide-Over & Bottom-Sheet)
+       ========================================== -->
+  
+  <!-- Mobile Sort Bottom Sheet Modal -->
+  <%- include('partials/sort-bottom-sheet') %>
+
+  <!-- Mobile Filter Bottom Sheet Modal -->
+  <%- include('partials/filter-bottom-sheet') %>
+
+  <!-- Size Selector Modal Popup -->
+  <%- include('partials/size-modal') %>
+
+  <!-- Shopping Bag (Cart) Drawer -->
+  <%- include('partials/cart-drawer') %>
+
+  <!-- Wishlist Drawer -->
+  <%- include('partials/wishlist-drawer') %>
+
+  <!-- Mobile Menu Drawer (Hamburger) -->
+  <%- include('partials/mobile-menu') %>
+
+  <!-- Fixed Mobile Bottom Action Bar (Sort & Filter) + Fixed Bottom Nav Bar -->
+  <%- include('partials/mobile-bottom-bar') %>
+
+  <!-- Client-Side Logic Engine -->
+  <script src="/js/app.js"></script>
+</body>
+</html>

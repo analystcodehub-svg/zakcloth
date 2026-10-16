@@ -1,0 +1,44 @@
+<!-- Pure CSS Promotional Bank Offer Strip (Light Blue Theme) -->
+<section class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 mt-3">
+  <div class="relative overflow-hidden rounded-xl bg-gradient-to-r from-sky-400 via-cyan-400 to-[#0284c7] p-0.5 shadow-sm">
+    <div class="bg-white/95 backdrop-blur-sm rounded-[10px] px-3 sm:px-4 py-2 sm:py-2.5 flex flex-col sm:flex-row items-center justify-between gap-2">
+      
+      <!-- Left: Offer Highlight with Geometric Pattern Tag -->
+      <div class="flex items-center gap-2.5">
+        <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-[#0284c7] to-[#38bdf8] flex items-center justify-center text-white font-bold text-sm flex-shrink-0 shadow-sm shadow-sky-500/20">
+          <span>%</span>
+        </div>
+        <div class="flex flex-col">
+          <div class="flex items-center gap-2 flex-wrap">
+            <span class="text-xs sm:text-sm font-extrabold text-slate-900">
+              BANK OFFER: 10% Instant Discount
+            </span>
+            <span class="text-[10px] font-bold bg-sky-100 text-[#0284c7] px-2 py-0.5 rounded-full uppercase">
+              HDFC • SBI • ICICI
+            </span>
+          </div>
+          <span class="text-[11px] text-slate-500 font-medium">
+            On min. purchase of ₹2,499. Valid on all prepaid cards.
+          </span>
+        </div>
+      </div>
+
+      <!-- Right: Coupon Code Voucher with Click-to-Copy -->
+      <div class="flex items-center gap-2 w-full sm:w-auto justify-end">
+        <div class="flex items-center border border-dashed border-sky-400 bg-sky-50/80 rounded-md px-2.5 py-1">
+          <span class="text-[10px] text-slate-500 mr-1.5 uppercase font-bold">Code:</span>
+          <span class="text-xs font-mono font-black text-[#0284c7] tracking-wider" id="couponCodeText">MOOD100</span>
+        </div>
+        <button 
+          type="button" 
+          id="copyCouponBtn" 
+          class="text-[11px] font-bold text-[#0284c7] hover:text-sky-800 bg-white hover:bg-sky-50 border border-sky-200 px-2.5 py-1 rounded-md transition-colors shadow-2xs whitespace-nowrap active:scale-95"
+          onclick="copyPromoCode('MOOD100')"
+        >
+          TAP TO COPY
+        </button>
+      </div>
+
+    </div>
+  </div>
+</section>

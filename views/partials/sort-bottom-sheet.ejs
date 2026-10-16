@@ -1,0 +1,54 @@
+<!-- Mobile Sort Bottom-Sheet Modal (Light Blue Theme) -->
+<div id="sortModal" class="fixed inset-0 z-50 pointer-events-none transition-opacity duration-300 opacity-0">
+  <!-- Backdrop -->
+  <div id="sortBackdrop" class="absolute inset-0 bg-slate-900/60 backdrop-blur-2xs transition-opacity duration-300 pointer-events-auto" onclick="closeSortModal()"></div>
+
+  <!-- Bottom Sheet Content -->
+  <div id="sortSheet" class="absolute bottom-0 inset-x-0 bg-white rounded-t-2xl shadow-2xl pointer-events-auto transform translate-y-full transition-transform duration-300 ease-out max-h-[80vh] flex flex-col">
+    
+    <!-- Header -->
+    <div class="flex items-center justify-between px-5 py-3.5 border-b border-sky-100">
+      <div class="flex items-center gap-2">
+        <svg class="w-4 h-4 text-[#0284c7]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4h13M3 8h9m-9 4h6m4 0l4-4m0 0l4 4m-4-4v12"/></svg>
+        <span class="text-sm font-extrabold uppercase tracking-wider text-slate-900">Sort By</span>
+      </div>
+      <button type="button" onclick="closeSortModal()" class="text-slate-400 hover:text-slate-700 p-1">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+
+    <!-- Options List -->
+    <div class="p-2 space-y-1">
+      <label class="sort-option flex items-center justify-between p-3.5 rounded-lg hover:bg-sky-50/60 cursor-pointer transition-colors">
+        <span class="text-xs sm:text-sm font-semibold text-slate-800">Recommended / Popularity</span>
+        <input type="radio" name="sortOption" value="popularity" class="w-4 h-4 text-[#0284c7] focus:ring-[#0ea5e9]" <%= (typeof activeSort === 'undefined' || activeSort === 'popularity') ? 'checked' : '' %> onchange="onSortChange(this.value)" />
+      </label>
+
+      <label class="sort-option flex items-center justify-between p-3.5 rounded-lg hover:bg-sky-50/60 cursor-pointer transition-colors">
+        <span class="text-xs sm:text-sm font-semibold text-slate-800">Price: Low to High</span>
+        <input type="radio" name="sortOption" value="price_asc" class="w-4 h-4 text-[#0284c7] focus:ring-[#0ea5e9]" <%= (typeof activeSort !== 'undefined' && activeSort === 'price_asc') ? 'checked' : '' %> onchange="onSortChange(this.value)" />
+      </label>
+
+      <label class="sort-option flex items-center justify-between p-3.5 rounded-lg hover:bg-sky-50/60 cursor-pointer transition-colors">
+        <span class="text-xs sm:text-sm font-semibold text-slate-800">Price: High to Low</span>
+        <input type="radio" name="sortOption" value="price_desc" class="w-4 h-4 text-[#0284c7] focus:ring-[#0ea5e9]" <%= (typeof activeSort !== 'undefined' && activeSort === 'price_desc') ? 'checked' : '' %> onchange="onSortChange(this.value)" />
+      </label>
+
+      <label class="sort-option flex items-center justify-between p-3.5 rounded-lg hover:bg-sky-50/60 cursor-pointer transition-colors">
+        <span class="text-xs sm:text-sm font-semibold text-slate-800">Customer Rating</span>
+        <input type="radio" name="sortOption" value="rating" class="w-4 h-4 text-[#0284c7] focus:ring-[#0ea5e9]" <%= (typeof activeSort !== 'undefined' && activeSort === 'rating') ? 'checked' : '' %> onchange="onSortChange(this.value)" />
+      </label>
+
+      <label class="sort-option flex items-center justify-between p-3.5 rounded-lg hover:bg-sky-50/60 cursor-pointer transition-colors">
+        <span class="text-xs sm:text-sm font-semibold text-slate-800">Better Discount</span>
+        <input type="radio" name="sortOption" value="discount" class="w-4 h-4 text-[#0284c7] focus:ring-[#0ea5e9]" <%= (typeof activeSort !== 'undefined' && activeSort === 'discount') ? 'checked' : '' %> onchange="onSortChange(this.value)" />
+      </label>
+
+      <label class="sort-option flex items-center justify-between p-3.5 rounded-lg hover:bg-sky-50/60 cursor-pointer transition-colors">
+        <span class="text-xs sm:text-sm font-semibold text-slate-800">What's New</span>
+        <input type="radio" name="sortOption" value="newest" class="w-4 h-4 text-[#0284c7] focus:ring-[#0ea5e9]" <%= (typeof activeSort !== 'undefined' && activeSort === 'newest') ? 'checked' : '' %> onchange="onSortChange(this.value)" />
+      </label>
+    </div>
+
+  </div>
+</div>
